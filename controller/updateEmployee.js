@@ -7,7 +7,7 @@ const updateEmployee = async (req, res)=>{
         const user_id = req.params.id;
 
         const updateEmp = await Employee.findByIdAndUpdate(
-            { user_id: user_id },
+            user_id,
             req.body,
             { new: true }
         );
