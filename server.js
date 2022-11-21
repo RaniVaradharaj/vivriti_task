@@ -8,8 +8,6 @@ const app = express();
 
 const cors = require('cors');
 
-const bodyParser = require('body-parser');
-
 const employeeRoutes = require('./routes/route');
 
 require("dotenv").config();
@@ -36,7 +34,7 @@ const port = process.env.PORT || 4500;
 app.use(cors());
 
 //Middleware
-app.use(bodyParser.json());
+app.use(express.json());
 
 //API status
 app.get('/api', (req, res) => {
